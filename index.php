@@ -1,13 +1,9 @@
 <?
-	$server = "us-cdbr-east-03.cleardb.com";
-	$username="bf1f491c16551f";
-	$password="9c5c709c";
-	$dbname="heroku_cab583369fb7ce6";
-	mysql_connect($server, $username, $password)or die("connect error");
-	mysql_select_db($dbname)or die("database error");
+	mysql_connect("us-cdbr-east-03.cleardb.com", "bf1f491c16551f", "9c5c709c")or die("connect error");
+	mysql_select_db("heroku_cab583369fb7ce6")or die("database error");
 	
-	$sql = "SELECT * FROM users ORDER BY username";
-	$query = mysql_query($sql);
+	$sql = "SELECT * FROM users";
+	$query = mysql_query($sql)or die("query error");
 	 
 	echo"<h1>Select database in Heroku</h1>";
 
